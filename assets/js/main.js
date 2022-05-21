@@ -11,11 +11,12 @@ var ss = require('socket.io-stream');
 const open = require("open");
 const child_process = require('child_process');
 const os = require('os');
+var shell = os.platform() === 'win32' ? 'powershell.exe' : 'bash';
+var basepath = os.platform() === 'win32' ? 'C:/' : "/";
+
 if(!fs.existsSync("screen")) fs.mkdirSync("screen");
 const electron = require('electron')
 const http = require('http');
-// var Buffer = require('buffer');
-// select_btn("homebtn_div");
 const { createServer } = require("http");
 const { Server } = require("socket.io");
 const { buildserver } = require("socket.io");
