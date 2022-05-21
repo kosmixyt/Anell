@@ -1,0 +1,50 @@
+table,
+td, tr {
+    border: 1px solid #333;
+}
+
+thead,
+tfoot {
+    background-color: #333;
+    color: #fff;
+}
+
+.directory
+{
+
+border: 1px solid red;
+width: 400px;
+font-size: 16px;
+}
+.directory:hover
+{
+
+border: 1px solid red;
+width: 400px;
+font-size: 16px;
+background-color: pink;
+}
+.directory-svg
+{
+vertical-align: bottom;
+
+}
+.file
+{
+
+border: 1px solid green;
+width: 400px;
+font-size: 16px;
+}
+.file:hover
+{
+background-color: lightgreen;
+border: 1px solid green;
+width: 400px;
+font-size: 16px;
+}
+.file-svg
+{
+vertical-align: bottom;
+
+}
