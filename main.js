@@ -1,7 +1,6 @@
 // Modules to control application life and create native browser window
 const {app, BrowserWindow, ipcMain} = require('electron')
 const os = require('os')
-const pty = require('node-pty');
 const path = require('path')
 
 
