@@ -8,6 +8,7 @@ var readlineSync = require('readline-sync');
 var isLocal = require('is-local-ip');
 const pathm = require('path-extra');
 var ss = require('socket.io-stream');
+var pjson = require('./package.json');
 const open = require("open");
 const child_process = require('child_process');
 const os = require('os');

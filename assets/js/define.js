@@ -167,12 +167,15 @@ for(e = 0; e < sockets.length && check_auth_id(sockets[e]) !== false; e++)
         imagesrc = "assets/img/local.svg";
     }else
     {
-        response = await request("http://ip-api.com/json/" + ip.substr(7));
+
+                    //    Jamais les URL en dur. Dans une variable.... !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+        response = await request("https://ipapi.co/" + ip.substr(7) + "/json/");
         response = JSON.parse(response);
         configon.config[checkauthindex].ip_info = response;
     
         configupdate();
-        imagesrc = "assets/img/" + response.countryCode + ".svg";
+        imagesrc = "assets/img/" + response.country_code + ".svg";
     }
 
 xtemr = `<button onclick="createxterm('${id}')">Xterm</button>`;
@@ -543,4 +546,41 @@ io.listen(port);
     console.log("Start server");
     _("server-ss").onclick = document.location.href = "";
     _("server-ss").innerHTML = "Stop server"
+}
+
+
+
+function infoshow()
+{
+_("tb_dashboard").innerHTML = 
+`
+<h1>Info</h1>
+<h2>Version : ${pjson.version}</h2>
+<h2>Nodejs Version : ${process.version}</h2>
+
+
+`;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 }

@@ -9,14 +9,8 @@
     "pack": "electron-builder --dir",
     "dist": "electron-builder"
   },
-  "repository": "https://github.com/electron/electron-quick-start",
-  "keywords": [
-    "Electron",
-    "quick",
-    "start",
-    "tutorial",
-    "demo"
-  ],
+  "repository": "https://github.com/kosmixyt/Anell",
+  "keywords": [],
   "author": "GitHub",
   "license": "CC0-1.0",
   "devDependencies": {
@@ -26,6 +20,7 @@
     "adm-zip": "^0.5.9",
     "buffer": "^6.0.3",
     "child_process": "^1.0.2",
+    "electron-updater": "^5.0.1",
     "express": "^4.17.3",
     "fs": "^0.0.1-security",
     "fs-extra": "^10.1.0",

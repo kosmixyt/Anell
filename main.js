@@ -1,8 +1,13 @@
 // Modules to control application life and create native browser window
 const {app, BrowserWindow, ipcMain} = require('electron')
+const { autoUpdater } = require("electron-updater")
 const os = require('os')
 const path = require('path')
 
+
+
+autoUpdater.setFeedURL('https://github.com/kosmixyt/Anell')
+autoUpdater.checkForUpdates()
 
 app.allowRendererProcessReuse = false;
 

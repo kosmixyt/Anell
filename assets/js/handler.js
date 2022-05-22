@@ -67,6 +67,7 @@ resetstyle();
 document.getElementById("infobtn_div").style.backgroundColor = "grey"
 selected_btn = "infobtn_div";
 
+infoshow();
 
 })
 }
