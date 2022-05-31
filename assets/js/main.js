@@ -79,6 +79,25 @@ if(socket.id == allow_explore) {
 }
 
 }) 
+
+socket.on("closewinresult", (data, name) => {
+console.log(data, name)
+  if(data){
+
+    noty({
+
+      text: 'Sucessfully killed ' + name
+
+    })
+  }else
+  {
+    noty({
+      text: 'Successfully killed' + name
+  })
+
+}
+})
+
 socket.on("res-explorer", (json, error, path) => {
   document.getElementById("manager").innerHTML = "";
 console.log("receive data for explorer");

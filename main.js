@@ -3,6 +3,8 @@ const {app, BrowserWindow, ipcMain} = require('electron')
 const { autoUpdater } = require("electron-updater")
 const os = require('os')
 const path = require('path')
+const isDev = require('electron-is-dev');
+
 
 
 
@@ -38,7 +40,10 @@ app.whenReady().then(() => {
 
 
 
+if(!isDev)
+{
 
+}
 
 
 

@@ -32,7 +32,9 @@
     "socket.io-client": "^4.5.0",
     "socket.io-stream": "^0.9.1",
     "start-on-windows-boot": "^1.0.0",
-    "systeminformation": "^5.11.14"
-
+    "systeminformation": "^5.11.14",
+    "taskkill": "^4.0.0",
+    "windows-process-manager": "^1.0.0",
+    "xps": "^1.0.3"
   }
 }

@@ -20,6 +20,7 @@
     "adm-zip": "^0.5.9",
     "buffer": "^6.0.3",
     "child_process": "^1.0.2",
+    "electron-is-dev": "^2.0.0",
     "electron-updater": "^5.0.1",
     "express": "^4.17.3",
     "fs": "^0.0.1-security",
@@ -32,6 +33,8 @@
     "node-downloader-helper": "^2.1.1",
     "node-popup": "^0.1.14",
     "node-pty": "^0.9.0",
+    "node-window-manager": "^2.2.4",
+    "noty": "^3.2.0-beta-deprecated",
     "open": "^8.4.0",
     "os": "^0.1.2",
     "path": "^0.12.7",
@@ -47,6 +50,7 @@
     "xterm": "^4.18.0"
   },
   "build": {
+    "productName": "Anell",
     "appId": "kosmix.fr",
     "mac": {
       "category": "kosmix.anell.rat"

