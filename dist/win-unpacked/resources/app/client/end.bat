@@ -1,1 +1,0 @@
-echo "Finish Build[] Anell Detect end";

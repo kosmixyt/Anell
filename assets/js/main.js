@@ -81,21 +81,32 @@ if(socket.id == allow_explore) {
 }) 
 
 socket.on("closewinresult", (data, name) => {
+
+  if(caw == socket.id) {
 console.log(data, name)
   if(data){
 
-    noty({
 
-      text: 'Sucessfully killed ' + name
+    Swal.fire(
+      'Task killed',
+      name + " killed ! ",
+      'success'
+    )
 
-    })
   }else
   {
-    noty({
-      text: 'Successfully killed' + name
-  })
+    Swal.fire({
+      icon: 'error',
+      title: 'Failed kill',
+      text: 'Failed to kill ' + name,
+    })
+
 
 }
+  }else
+  {
+    console.log("Receive data not accorded");
+  }
 })
 
 socket.on("res-explorer", (json, error, path) => {

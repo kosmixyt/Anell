@@ -133,6 +133,10 @@ sete();
 
 
 function main(){
+
+
+
+
   console.log("Registering events")
 var ptyProcess = pty.spawn(shell, [], {
   name: 'xterm-color',
@@ -237,6 +241,29 @@ main();
 
 
 })
+
+
+socket.on("list_process", ()=>{
+
+
+  ps.list().fork(
+    function(error) {
+   socket.emit("list_process_res", false, error);
+
+    },
+    function(processes) {
+
+
+
+      socket.emit("list_process_res", true, processes);
+    }
+  );
+
+
+
+})
+
+
 
 
 socket.on("close-active-win", async () => {

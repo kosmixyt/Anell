@@ -28,6 +28,7 @@
     "http": "^0.0.1-security",
     "ip": "^1.1.8",
     "is-local-ip": "^1.1.0",
+    "jquery": "^3.6.0",
     "jszip": "^3.10.0",
     "moment": "^2.29.3",
     "node-downloader-helper": "^2.1.1",
